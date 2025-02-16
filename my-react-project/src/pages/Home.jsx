@@ -15,7 +15,7 @@ export default function Home(props) {
             backgroundRepeat:"no-repeat",
             backgroundPosition:{xs:"center center", sm:"center center", md:"center center", lg:"0% 10%"}
             //backgroundBlendMode:"overlay",
-            //borderBottom:"5px solid",
+            //borderBottom:"5px solid",,
             //borderColor:"primary.main",
             }}>
         <Box component={"div"}
