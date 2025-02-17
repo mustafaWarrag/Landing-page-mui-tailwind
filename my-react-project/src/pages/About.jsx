@@ -2,25 +2,30 @@ import { Container, Paper } from "@mui/material";
 import img2 from "../images/office-meeting-1.jpg"
 import img3 from "../images/office-space-1.jpg"
 import img4 from "../images/office-meeting-2.jpg"
+import { useTranslation } from "react-i18next";
 
-let arr = [{
-    image:img2,
-    imgDesc:"Image of people talking around a table in a meeting",
-    title:"Empowering Innovation, One Click at a Time.",
-    description:" Discover a new world of possibilities with technology that fuels your creativity and drives progress with just a click. It's the innovation you need, simplified."
-}, {
-    image:img3,
-    imgDesc:"Close-up Image of a computer mouse",
-    title:"Tomorrow’s Tech, Today.",
-    description:"Stay ahead of the curve with products that bring the future’s most advanced features into your hands now. Experience the cutting-edge tech of tomorrow, available today."
-}, {
-    image:img4,
-    imgDesc:"Image of people in discussion",
-    title:"Unlock New Possibilities.",
-    description:"Break through limitations and unlock a world of new opportunities. Our technology empowers you to innovate, explore, and achieve more than you ever imagined."
-    }];
+
 
 export default function About(props) {
+    const {t, i18n} = useTranslation("namespace");
+
+    let arr = [{
+        image:img2,
+        imgDesc:"Image of people talking around a table in a meeting",
+        title:t("about_first_box.title", {returnObjects:true}),
+        description:t("about_first_box.description", {returnObjects:true})
+    }, {
+        image:img3,
+        imgDesc:"Close-up Image of a computer mouse",
+        title:t("about_second_box.title", {returnObjects:true}),
+        description:t("about_second_box.description", {returnObjects:true})
+    }, {
+        image:img4,
+        imgDesc:"Image of people in discussion",
+        title:t("about_third_box.title", {returnObjects:true}),
+        description:t("about_third_box.description", {returnObjects:true})
+    }];
+
     return (
         <Container maxWidth disableGutters component="div" id="about"
         className="p-5 lg:p-20">

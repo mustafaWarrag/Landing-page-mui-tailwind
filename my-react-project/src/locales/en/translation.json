@@ -1,0 +1,40 @@
+{
+    "navbar_logo":"Company",
+    "navbar_items":["home","about","pricing"],
+
+    "home_tagline":"Innovation",
+    "home_button_1":"Download",
+    "home_button_2":"Learn More",
+
+    "jumbotron_title":"Our Product",
+    "jumbotron_description":" The most powerful tech doesn't have to be difficult to use. Our products offer simplicity with the power to deliver outstanding results for work, play, and everything in between.",
+
+    "about_first_box":{
+        "title":"Tomorrow’s Tech, Today.",
+        "description":" Discover a new world of possibilities with technology that fuels your creativity and drives progress with just a click. It's the innovation you need, simplified."
+    },
+    "about_second_box":{
+        "title":"Empowering Innovation, One Click at a Time.",
+        "description":"Stay ahead of the curve with products that bring the future’s most advanced features into your hands now. Experience the cutting-edge tech of tomorrow, available today."
+    },
+    "about_third_box":{
+        "title":"Unlock New Possibilities.",
+    "description":"Break through limitations and unlock a world of new opportunities. Our technology empowers you to innovate, explore, and achieve more than you ever imagined."
+    },
+
+    "pricing_title":"Our Services",
+    "pricing_subtitle":"Technology should make life cheaper, not more expensive. We are providing mind—intuitive, reliable, and powerful technology to fit your everyday needs.",
+
+    "pricing_tier_1":"Free",
+    "pricing_tier_2":"Paid",
+    "pricing_tier_3":"Deluxe",
+
+    "pricing":["Basic Access to core features and functionality.",
+       "Limited Storage. 1 GB cloud storage or data storage.",
+        "High Speed for processing or data usage.",
+        "Integrations with other tools or services (e.g., 1 or 2 integrations).",
+        "Full Security with encryption for data at rest and in transit.",
+        "Full Customization (basic settings and preferences).",
+        "Unlimited Usage (e.g., 100+ actions/requests per month)."
+    ]
+}

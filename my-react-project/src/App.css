@@ -1,9 +1,22 @@
 @import "tailwindcss";
-html, body {
+html {
   padding:0;
   box-sizing: content-box;
   scroll-behavior: smooth;
+  direction: ltr;
+  /* text-align:left*/
+};
+
+html[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
 }
+
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
 button {
   cursor:pointer
 }

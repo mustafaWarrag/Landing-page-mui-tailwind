@@ -1,5 +1,5 @@
 import { Box, Button, Container, createTheme, CssBaseline, GlobalStyles, Typography } from '@mui/material';
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ThemeProvider } from '@emotion/react';
 import { green, yellow } from '@mui/material/colors';
 import './App.css'
@@ -14,27 +14,46 @@ import Jumbotron from './pages/Jumbotron.jsx';
 import About from './pages/About.jsx';
 import Prices from './pages/Prices.jsx';
 import Footer from './pages/Footer.jsx';
+import { useTranslation } from 'react-i18next';
 
 function App() {
   const [count, setCount] = useState(0);
+
+  const [lang, setLang] = useState("en");
+  const {t, i18n} = useTranslation("namespace");
+
   let darkMode = createTheme({
     palette:{
       mode:"dark",
       primary:green,
       secondary:yellow
     }
-  })
+  });
+
+  function changeLanguage() {
+    i18n.changeLanguage(lang);
+  }
+
+  useEffect(()=>{
+      changeLanguage();
+      if (lang === "ar") {
+          document.documentElement.setAttribute("dir", "rtl");
+      } else {
+          document.documentElement.setAttribute("dir", "ltr");
+      }
+
+  },[lang])
 
   return (
     <>
       <ThemeProvider theme={darkMode}>
         <GlobalStyles />
           <CssBaseline />
-            <NavBar />
-            <Home />
+            <NavBar lang={lang} setLang={setLang} />
+            <Home lang={lang} />
             <Jumbotron />
             <About />
-            <Prices />
+            <Prices lang={lang} />
             <Footer />
       </ThemeProvider>
     </>
