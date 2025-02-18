@@ -36,33 +36,39 @@ export default function About(props) {
                 <div className="hidden md:flex flex-col">
                     {arr.map((val,index, array) => index % 2 === 0? (<div key={index} 
                     className="flex flex-row justify-between items-center flex-nowrap pt-0 pb-0">
-                        <span className="text-xl grow-0 shrink-1 basis-[50%] p-5 text-[1.10rem] lg:text-lg">
-                            <span className="font-[600]">
+                        <span className="grow-0 shrink-1 basis-[50%] p-5 lg:text-lg">
+                            <span style={props.lang === "ar"? {fontSize:"2.1rem"}:{fontSize:"1.7rem"}}  
+                            className="font-[600]">
                                 {val.title}
                             </span>
                             <br/>
-                            <span className="font-[200]">
+                            <span style={props.lang === "ar"? {fontSize:"1.5rem"}:{fontSize:"1.1rem"}}  
+                            className="font-[200]">
                                 {val.description}
                             </span>
                         </span>
                     
                         <span className="grow-2 shrink-0 basis-[660px] md:basis-[50%] sm:basis-[300px]">
                             {index !== array.length - 1 ? (
-                            <img src={val.image} title={val.imgDesc} width={"100%"} style={{borderTopRightRadius:"40px"}} />
+                            <img src={val.image} title={val.imgDesc} width={"100%"} 
+                            style={props.lang==="en"? {borderTopRightRadius:"40px"} : {borderTopLeftRadius:"40px"} } />
                             ) : (
-                            <img src={val.image} title={val.imgDesc} width={"100%"} style={{borderBottomRightRadius:"40px"}} />
+                            <img src={val.image} title={val.imgDesc} width={"100%"} 
+                            style={props.lang==="en"? {borderBottomRightRadius:"40px"} : {borderBottomLeftRadius:"40px"} } />
                             )}
                         </span>
                     </div>
                     ) : (
                         <div key={index} 
                         className="flex flex-row-reverse justify-between items-center flex-nowrap pt-0 pb-0">
-                        <span className="text-xl p-5 grow-0 shrink-2 basis-[50%] text-[1.10rem] lg:text-lg">
-                            <span className="font-[600]">
+                        <span className="p-5 grow-0 shrink-2 basis-[50%] lg:text-lg">
+                            <span style={props.lang === "ar"? {fontSize:"2.1rem"}:{fontSize:"1.7rem"}}  
+                            className="font-[600]">
                                 {val.title}
                             </span>
                             <br/>
-                            <span className="font-[200]">
+                            <span style={props.lang === "ar"? {fontSize:"1.5rem"}:{fontSize:"1.1rem"}}   
+                            className="font-[200]">
                             {val.description}
                             </span>
                         </span>

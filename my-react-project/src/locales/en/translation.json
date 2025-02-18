@@ -36,5 +36,15 @@
         "Full Security with encryption for data at rest and in transit.",
         "Full Customization (basic settings and preferences).",
         "Unlimited Usage (e.g., 100+ actions/requests per month)."
-    ]
+    ],
+
+    "footer_tagline":"Technology Made Easy.",
+    "footer_download":"Download On ",
+    "footer_platforms":["IOS", "Android"],
+
+    "footer_header_col_2":"Company",
+    "footer_col_2":["About", "Blog", "Privacy Policy", "Legal Team", "Documentation"],
+
+    "footer_header_col_3":"Tech Support",
+    "footer_col_3":["Help Center", "Report", "Hiring", "Licence", "Copyright"]
 }

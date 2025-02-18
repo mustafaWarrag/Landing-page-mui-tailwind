@@ -15,6 +15,9 @@ html[dir="ltr"] {
 html[dir="rtl"] {
   direction: rtl;
   text-align: right;
+  body {
+    font-family: "Rubik", serif !important;
+  };
 }
 
 button {

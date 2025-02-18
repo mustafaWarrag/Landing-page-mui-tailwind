@@ -1,12 +1,13 @@
 import { Box, Container } from "@mui/material";
-import img1 from "../images/stockImg3.jpg"
+import img1 from "../images/stockImg2.jpg"
 import { useTranslation } from "react-i18next";
 //make navbar responsive
 //and use i18next for translation
 
 export default function Home(props) {
     const {t, i18n} = useTranslation("namespace");
-    let isMirrored = props.lang === "en"? "100%" : "-100%";
+
+    let lang_spacing = props.lang === "en"? "0.3rem" : "0rem";
 
     return (
         <Container disableGutters maxWidth 
@@ -15,17 +16,15 @@ export default function Home(props) {
             height:"100vh",
             backgroundImage:`url("${img1}")`,
             bgcolor:"background.default",
-            backgroundSize:{xs:"cover", sm:"cover", md:"cover", lg:isMirrored},
+            backgroundSize:{xs:"cover", sm:"cover", md:"cover", lg:"100%"},
             backgroundRepeat:"no-repeat",
-            backgroundPosition:{xs:"center center", sm:"center center", md:"center center", lg:"0% 10%"}
-            //backgroundBlendMode:"overlay",
-            //borderBottom:"5px solid",,
-            //borderColor:"primary.main",
+            backgroundPosition:{xs:"10% 0%", sm:"10% 0%", md:"center center", lg:"0% 10%"}
             }}>
         <Box component={"div"}
         className="p-8 flex flex-col flex-nowrap items-start justify-center h-full">
             <span className="p-5 py-10 w-[50%] md:w-[32%] bg-white/10 rounded-xl shadow-xl border-1 border-gray-400">
-                    <span className="font-[Afacad Flux] text-black text-[1.7rem] md:text-[1.8rem] xl:text-[2.7rem] font-[800] tracking-[.3rem] capitalise">
+                    <span style={{letterSpacing:lang_spacing}}
+                    className="text-black text-[1.7rem] md:text-[1.8rem] xl:text-[2.7rem] font-[Afacad Flux] font-[800] capitalise">
                     {t("home_tagline")}.
                     </span>
             </span>

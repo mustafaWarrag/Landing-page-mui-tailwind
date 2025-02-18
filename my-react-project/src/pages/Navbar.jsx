@@ -17,14 +17,16 @@ export default function NavBar(props) {
         console.log(props.lang);
     }
 
+    let lang_spacing = props.lang === "en"? "0.6rem" : ".0rem";
+    let lang_size = props.lang === "en"? "1.1rem" : "1.6rem"
 
     return (
         <Container maxWidth="xl" disableGutters>
             <Paper elevation={3}>
                 <Box component={"div"} className="flex items-center p-2 flex-row justify-between">
                     <Typography variant="overline" className="text-gray-300" sx={{
-                        letterSpacing:"0.6rem",
-                        fontSize:"1.1rem",
+                        letterSpacing:lang_spacing,
+                        fontSize:lang_size,
                         fontFamily:"Aldrich, serif"
                     }}>
                         {t('navbar_logo')}

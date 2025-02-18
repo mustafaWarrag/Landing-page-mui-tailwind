@@ -51,8 +51,8 @@ function App() {
           <CssBaseline />
             <NavBar lang={lang} setLang={setLang} />
             <Home lang={lang} />
-            <Jumbotron />
-            <About />
+            <Jumbotron lang={lang} />
+            <About lang={lang} />
             <Prices lang={lang} />
             <Footer />
       </ThemeProvider>
