@@ -78,7 +78,7 @@ export default function Footer(props) {
                         </span>
                     </span>    
                 </div>
-                <div className="my-5 font-[Roboto] font-[400] md:pl-2 text-[1.2rem] md:text-xl text-gray-400 text-center md:text-left tracking-[.1rem] w-[100%]">
+                <div className="my-5 font-[Roboto] font-[400] md:pl-2 text-[1.2rem] md:text-xl text-gray-400 text-center! md:text-left tracking-[.1rem] w-[100%]">
                         Mustafa Warrag &copy;2025
                 </div>
             </Container>
