@@ -1,5 +1,5 @@
-import { ArrowDropDown } from "@mui/icons-material";
-import { Box, Button, Container, Select, Paper, Typography, MenuItem } from "@mui/material";
+import { ArrowDropDown, Menu } from "@mui/icons-material";
+import { Box, Button, Container, Select, Paper, Typography, MenuItem, Drawer, IconButton } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -7,14 +7,15 @@ let aList = ["home", "about", "pricing"];
 
 export default function NavBar(props) {
     const [opened, setOpen] = useState(false);
+    const [drawerOpen, setDrawer] = useState(false);
 
     const {t, i18n} = useTranslation("namespace");
     //let list = ["navbar_items[0]","navbar_items[1]","navbar_items[2]"]
     let list = t("navbar_items", {returnObjects:true});
     
    function handleChange(e) {
+        setDrawer(false);
         props.setLang(e.target.value);
-        console.log(props.lang);
     }
 
     let lang_spacing = props.lang === "en"? "0.6rem" : ".0rem";
@@ -31,7 +32,10 @@ export default function NavBar(props) {
                     }}>
                         {t('navbar_logo')}
                     </Typography>
-                    <Box component={"div"} className="flex flex-row justify-center">
+
+                    {/*For laptop and large screens*/}
+                    <Box component={"div"} sx={{display:{md:"none", lg:"flex"}}} 
+                    className="flex-row justify-center">
                         <ul className="p-0">
                         {list.map((val, index)=>
                             <li className="inline text-md p-0" key={index}>
@@ -57,6 +61,43 @@ export default function NavBar(props) {
                                 
                         </li>
                         </ul>
+                    </Box>
+
+                    {/*For Mobile screens*/}
+                    <Box component="div" sx={{display:{md:"flex",lg:"none"}}} 
+                    className="flex-row justify-between">
+                        <IconButton onClick={()=>{setDrawer(true)}}>
+                            <Menu htmlColor="primary.main" />
+                        </IconButton>
+                        <Drawer elevation={2} anchor={props.lang === "en"? "right" : "left"}
+                        open={drawerOpen}
+                        onClose={()=>{setDrawer(false)}}>
+                            <ul className="p-0">
+                            {list.map((val, index)=>
+                                <li className="block text-md mx-auto p-1 px-12" key={index}>
+                                    <button className="capitalize p-3 text-gray-200 border-2 border-teal-500/0 rounded-full duration-100 ease-in hover:border-neutral-300">
+                                        <a href={`/#${aList[index]}`} onClick={()=>{setDrawer(false)}}>
+                                            {val}
+                                        </a>
+                                    </button>
+                                </li>
+                            )}
+                            <li className="block mx-2 px-12 text-md rounded-sm w-[50px]" 
+                            onClick={()=>{setOpen(true)}}>
+                                <label htmlFor="language"></label> 
+                                    <Select name="language" className="bg-neutral-800 uppercase" 
+                                    onChange={handleChange} value={props.lang}>
+                                        <MenuItem value="en" sx={{textTransform:"uppercase"}}>
+                                            en
+                                        </MenuItem>
+                                        <MenuItem value="ar" sx={{textTransform:"uppercase"}}>
+                                            ar
+                                        </MenuItem>
+                                    </Select>
+                            </li>
+                            </ul>
+                        </Drawer>
+
                     </Box>
                 </Box>
             </Paper>
